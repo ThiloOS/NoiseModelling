@@ -62,19 +62,25 @@ Step 3: Generating a Receiver Group
 Generating the Receiver Grid
 ---------------------------------------
 Use *Regular_Grid with* a spacing of 50 m between the receivers.
-Don't forget to view your resulting layer in WPSBuilder or OrsbisGIS/QGIS to check that it meets your expectations.
+Don't forget to view your resulting layer in WPSBuilder or OrbisGIS/QGIS to check that it meets your expectations.
 
 Step 4: Using Noise Modelling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Associating an emission noise level with roads
 ------------------------------------------------------------------------------
-The *Road_Emission_from_Traffic* block is used to generate a road layer, called LW_ROADS, containing LW emission noise level values in accordance with the emission laws of the CNOSSOS model. The format of the input road layer can be found in the description of the WPS Bloc.
+The *Road_Emission_from_Traffic* block is used to generate a road layer, called `LW_ROADS`, containing LW emission noise level values in accordance with the emission laws of the CNOSSOS model. The format of the input road layer can be found in the description of the WPS Bloc.
 
 Don't forget to view your resulting layer in WPSBuilder or OrsbisGIS/QGIS to verify that it meets your expectations.
 
 Source to Receiver Propagation
 ------------------------------------------------------------------------------
 The *Lden_from_Emission* block allows to generate a layer of receiver points with associated sound levels corresponding to the sound level emitted by the sources propagated to the receivers according to the CNOSSOS propagation laws.
+
+.. note::
+  - Use `LW_ROADS` as noise sources table
+  - Use `RECEIVERS` as receivers table
+  - Use `BUILDINGS` as buildings table
+  - Other parameters are optional
 
 Step 5: Viewing the result
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
